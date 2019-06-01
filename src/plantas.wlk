@@ -75,7 +75,7 @@ class Tomaco inherits Planta{
 	}
 
 	method esRegada() {
-		self.move(position.up(1))
+		self.move(position.up(1)) //La variable position de Tomaco cambia, pero su posicion en el tablero no.
 	}
 	
 	override method puedeCosecharse() = true
