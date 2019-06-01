@@ -20,9 +20,9 @@ class Maiz inherits Planta{
 
 	const stage1 = "corn_baby.png"
 	const stage2 = "corn_adult.png"
-	var imagen = stage1
-	const property valor = 150	
+	var imagen = stage1	
 	
+	method valor() = 150
 
 	method image() = imagen
 	
@@ -43,7 +43,8 @@ class Trigo inherits Planta{
 	const imagen1 = "wheat_"
 	const imagen2 = ".png"
 	var property stage = 0
-	var property valor = (stage - 1)*100
+	
+	method valor() = (stage - 1)*100
 	
 	method image() = imagen1 + stage + imagen2
 
@@ -64,7 +65,8 @@ class Tomaco inherits Planta{
 
 	var property imagen = "tomaco.png"
 	var property position = hector.position()
-	const property valor = 80 
+	
+	method valor() = 80 
 
 	method image() = imagen
 

@@ -39,7 +39,7 @@ object hector {
 	}
 	
 	method vender() {
-		dinero =+ plantasParaVender.sum{ unaPlanta => unaPlanta.valor() }
+		dinero += plantasParaVender.sum{ unaPlanta => unaPlanta.valor() }
 		plantasParaVender.clear()
 	}
 	
