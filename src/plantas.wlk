@@ -3,6 +3,8 @@ import hector.*
 
 class Planta {
 	
+	var property position
+	
 	method puedeCosecharse()
 	
 	method esCosechada() {
@@ -64,19 +66,20 @@ class Trigo inherits Planta{
 class Tomaco inherits Planta{
 
 	var property imagen = "tomaco.png"
-	var property position = hector.position()
 	
 	method valor() = 80 
 
 	method image() = imagen
 
-	method move(nuevaPos) {
-		self.position(nuevaPos)
-	}
 
 	method esRegada() {
-		self.move(position.up(1)) //La variable position de Tomaco cambia, pero su posicion en el tablero no.
+		self.position(self.position().up(1))
+		if (self.fueraDelTablero()) {
+			self.position(self.position().down(game.height()))
+		}
 	}
+	
+	method fueraDelTablero() = self.position().y() > game.height() - 1 
 	
 	override method puedeCosecharse() = true
 	

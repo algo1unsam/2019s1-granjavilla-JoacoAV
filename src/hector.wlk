@@ -18,7 +18,8 @@ object hector {
 
 	method sembrar(planta) {
 		if (game.colliders(self).isEmpty()) {
-			game.addVisualIn(planta, self.position())
+			planta.position(self.position())
+			game.addVisual(planta)
 		} else {
 			self.error("No puedo plantar aquí.")
 		}
